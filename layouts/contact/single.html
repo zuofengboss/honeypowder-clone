@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>{{ partial "head.html" (dict "Title" "联系我们 – 盐城市花美蜂蜜制品有限公司") }}</head>
+<body>
+
+{{ partial "header.html" (dict
+  "langHomeURL" "/"
+  "siteName" "盐城市花美蜂蜜制品有限公司"
+  "navItems" (slice
+    (dict "label" "首页"   "url" "/"                "isLang" false)
+    (dict "label" "关于我们" "url" "/about/"          "isLang" false)
+    (dict "label" "液体蜂蜜" "url" "/liquid-honey/"  "isLang" false)
+    (dict "label" "蜂蜜干粉" "url" "/honeypowder/"   "isLang" false)
+    (dict "label" "产品应用" "url" "/applications/"  "isLang" false)
+    (dict "label" "联系我们" "url" "/contact/"       "isLang" false)
+    (dict "label" "English" "url" "/en/contact-us/" "isLang" true)
+  )
+) }}
+
+<main id="content">
+
+  <div class="app-hero">
+    <div class="container">
+      <h3 style="font-size:clamp(28px,4vw,44px);">联系我们</h3>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h4>盐城市花美蜂蜜制品有限公司</h4>
+          <h5>Yancheng Huamei Honey Products Co., Ltd</h5>
+          <p class="intro">感谢您访问我们的网站。如果您对我们的蜂蜜干粉还是液体蜂蜜感兴趣或有任何问题，请随时联系我们。我们在这里解答您的疑问，探讨合作可能，并提供您所需的支持。</p>
+          <p class="intro">Thank you for visiting our website. If you are interested in our honey powder or liquid honey, or if you have any questions, please do not hesitate to contact us. We are here to answer your inquiries, discuss potential collaborations, and provide the support you need.</p>
+          <div class="contact-types">
+            <div class="contact-type">
+              <h6>寻求蜂蜜干粉或液体蜂蜜？</h6>
+              <p>对我们的蜂蜜干粉或蜂蜜感兴趣？想了解更多详情或获取报价？请告诉我们您的需求，我们将为您提供专业的解答。发送邮件至 <a href="mailto:yinxh@huameihoney.com">yinxh@huameihoney.com</a></p>
+            </div>
+            <div class="contact-type">
+              <h6>应用技术寻求帮助？</h6>
+              <p>遇到技术问题或需要售后支持？我们的专业团队随时准备为您提供帮助。</p>
+            </div>
+            <div class="contact-type">
+              <h6>经销商合作洽谈？</h6>
+              <p>寻求商业合作机会？我们乐于与您共同探索，请将您的想法告诉我们。发送邮件至 <a href="mailto:yinxh@huameihoney.com">yinxh@huameihoney.com</a></p>
+            </div>
+          </div>
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <h6>工厂地址</h6>
+              <p>江苏省盐城市西环路63号<br>No. 63 Xihuan Rd, Yancheng City, Jiangsu, China</p>
+              <p><a href="https://j.map.baidu.com/f1/b0kk" target="_blank" rel="noopener">导航</a></p>
+            </div>
+            <div class="contact-detail-item">
+              <h6>工作时间</h6>
+              <p>周一-周五: 08:30-17:00<br>周六: 9:30-17:00<br>周日: 休息</p>
+            </div>
+            <div class="contact-detail-item">
+              <h6>联系电话</h6>
+              <p>400-992-1617<br>+86-515-88177999</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-image">
+          <img src="/images/pexels-photo-229493-229493-1-768x512.jpg"
+               srcset="/images/pexels-photo-229493-229493-1.jpg 940w, /images/pexels-photo-229493-229493-1-768x512.jpg 768w, /images/pexels-photo-229493-229493-1-300x200.jpg 300w"
+               sizes="(max-width:768px) 100vw, 45vw"
+               alt="联系我们">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{ partial "footer.html" . }}
+</body>
+</html>

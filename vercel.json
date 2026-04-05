@@ -1,0 +1,17 @@
+{
+  "buildCommand": "hugo --minify",
+  "outputDirectory": "public",
+  "framework": null,
+  "installCommand": "curl -L https://github.com/gohugoio/hugo/releases/download/v0.147.0/hugo_extended_0.147.0_linux-amd64.tar.gz | tar -xz -C /usr/local/bin/",
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}

@@ -1,0 +1,1163 @@
+/* ============================================================
+   HoneyPowder.com Clone — Main Stylesheet
+   Colors: Gold #DCA54A | Navy #0F172A | Cream #FAF5E5
+   Fonts: Be Vietnam Pro 600 | Nunito Sans 400
+   ============================================================ */
+
+/* --- Fonts loaded via Google Fonts CDN in head.html --- */
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #0F172A;
+  background-color: #FAF5E5;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* --- Container --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+#site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s;
+  padding: 16px 0;
+}
+#site-header.scrolled {
+  background: #fff;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+#site-header .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#site-header .logo img {
+  width: 89px;
+  height: auto;
+}
+#site-header nav.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+#site-header nav.main-nav a {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #0F172A;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+#site-header nav.main-nav a:hover { color: #DCA54A; }
+#site-header nav.main-nav a.lang-switch {
+  color: #DCA54A;
+  border: 1.5px solid #DCA54A;
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 13px;
+}
+#site-header nav.main-nav a.lang-switch:hover {
+  background: #DCA54A;
+  color: #fff;
+}
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #0F172A;
+  transition: all 0.3s;
+}
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #FAF5E5;
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: #0F172A;
+}
+.mobile-nav a.lang-switch { color: #DCA54A; }
+.mobile-nav-close {
+  position: absolute;
+  top: 24px; right: 24px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #0F172A;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-block;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 36px;
+  border-radius: 30px;
+  transition: all 0.25s;
+  cursor: pointer;
+  border: none;
+}
+.btn-gold {
+  background: #DCA54A;
+  color: #fff;
+}
+.btn-gold:hover {
+  background: #c4923f;
+  color: #fff;
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid #DCA54A;
+  color: #DCA54A;
+}
+.btn-outline:hover {
+  background: #DCA54A;
+  color: #fff;
+}
+
+/* ============================================================
+   HERO — HOMEPAGE
+   ============================================================ */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #FAF5E5;
+  background-image: url('/images/day-care-hero-blobs-background.svg');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 0 80px;
+}
+.hero-content {
+  max-width: 700px;
+}
+.hero-icon-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(220,165,74,0.12);
+  border-radius: 30px;
+  padding: 8px 20px;
+  margin-bottom: 24px;
+}
+.hero-icon-box span {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #DCA54A;
+}
+.hero-section h6 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #DCA54A;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.hero-section h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.2;
+  color: #0F172A;
+  margin-bottom: 24px;
+}
+.hero-section p {
+  font-size: 17px;
+  color: #4a5568;
+  margin-bottom: 36px;
+  max-width: 600px;
+  line-height: 1.8;
+}
+.hero-image {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+  max-width: 520px;
+}
+.hero-image img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+/* ============================================================
+   SECTION COMMONS
+   ============================================================ */
+section { padding: 80px 0; }
+.section-label {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #DCA54A;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(26px, 3.5vw, 40px);
+  line-height: 1.25;
+  color: #0F172A;
+  margin-bottom: 20px;
+}
+.section-subtitle {
+  font-size: 17px;
+  color: #64748b;
+  margin-bottom: 48px;
+  max-width: 640px;
+}
+
+/* ============================================================
+   ADVANTAGES — HOMEPAGE
+   ============================================================ */
+.advantages-section {
+  background: #fff;
+}
+.advantages-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.advantages-text { }
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 16px;
+  color: #0F172A;
+}
+.checklist-item::before {
+  content: '';
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  background: #DCA54A;
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.advantages-image img {
+  border-radius: 16px;
+  width: 100%;
+}
+
+/* ============================================================
+   TESTIMONIALS — HOMEPAGE
+   ============================================================ */
+.testimonials-section {
+  background: #FAF5E5;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.testimonial-card h4 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #DCA54A;
+  margin-bottom: 12px;
+}
+.testimonial-card p {
+  font-size: 15px;
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   CORE VALUE — HOMEPAGE
+   ============================================================ */
+.core-value-section {
+  background: #0F172A;
+  color: #fff;
+  text-align: center;
+}
+.core-value-section .section-title { color: #fff; }
+.core-value-section .section-subtitle { color: rgba(255,255,255,0.7); }
+.core-value-quote {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(20px, 2.5vw, 28px);
+  color: #DCA54A;
+  margin-top: 32px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   HONEY SECTION — HOMEPAGE
+   ============================================================ */
+.honey-section {
+  background: #fff;
+}
+.honey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.honey-content p {
+  color: #4a5568;
+  margin-bottom: 20px;
+  line-height: 1.85;
+}
+.honey-quote {
+  border-left: 4px solid #DCA54A;
+  padding: 20px 24px;
+  background: #FAF5E5;
+  border-radius: 0 8px 8px 0;
+  margin-top: 32px;
+}
+.honey-quote blockquote {
+  font-style: italic;
+  font-size: 16px;
+  color: #0F172A;
+  line-height: 1.8;
+}
+.honey-quote cite {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #DCA54A;
+  font-style: normal;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+}
+.honey-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.honey-images img {
+  border-radius: 12px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ============================================================
+   ABOUT SECTION — HOMEPAGE
+   ============================================================ */
+.about-home-section {
+  background: #FAF5E5;
+}
+.about-home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.about-home-content p {
+  color: #4a5568;
+  margin-bottom: 32px;
+  line-height: 1.85;
+}
+
+/* ============================================================
+   PAGE HERO (subpages)
+   ============================================================ */
+.page-hero {
+  padding: 160px 0 80px;
+  background: #FAF5E5;
+  background-image: url('/images/day-care-page-header-blobs.svg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+.page-hero h1 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 52px);
+  color: #0F172A;
+  margin-bottom: 16px;
+}
+.page-hero p {
+  font-size: 18px;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.about-intro-section {
+  background: #fff;
+}
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.about-intro-content h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(26px, 3vw, 36px);
+  color: #0F172A;
+  margin-bottom: 24px;
+}
+.about-intro-content p {
+  color: #4a5568;
+  margin-bottom: 20px;
+  line-height: 1.85;
+}
+.about-awards {
+  background: rgba(220,165,74,0.08);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+}
+.about-awards p {
+  color: #0F172A;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+.about-gallery {
+  background: #FAF5E5;
+  padding: 80px 0;
+}
+.gallery-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #0F172A;
+  margin-bottom: 36px;
+  text-align: center;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.gallery-grid img {
+  border-radius: 12px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.gallery-grid img:hover { transform: scale(1.02); }
+
+/* ============================================================
+   HONEY POWDER PAGE
+   ============================================================ */
+.hp-hero {
+  padding: 140px 0 80px;
+  background: #FAF5E5;
+  background-image: url('/images/day-care-hero-blobs-background.svg');
+  background-size: cover;
+}
+.hp-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+.hp-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid rgba(220,165,74,0.3);
+  border-radius: 10px;
+  padding: 10px 16px;
+  min-width: 160px;
+  flex: 1;
+}
+.hp-badge .badge-zh {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #0F172A;
+  line-height: 1.4;
+}
+.hp-badge .badge-en {
+  font-size: 11px;
+  color: #DCA54A;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.hp-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.hp-intro-content h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(26px, 3vw, 38px);
+  color: #0F172A;
+  margin-bottom: 8px;
+}
+.hp-intro-content h6 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #DCA54A;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+.hp-intro-content p {
+  color: #4a5568;
+  margin-bottom: 16px;
+  line-height: 1.85;
+}
+.hp-applications {
+  background: #fff;
+  padding: 80px 0;
+}
+.hp-app-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #0F172A;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.hp-app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.hp-app-card {
+  background: #FAF5E5;
+  border-radius: 14px;
+  padding: 28px 24px;
+  border-top: 3px solid #DCA54A;
+}
+.hp-app-card .num {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: rgba(220,165,74,0.3);
+  margin-bottom: 12px;
+}
+.hp-app-card h4 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #0F172A;
+  margin-bottom: 10px;
+}
+.hp-app-card p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.7;
+}
+.hp-brand-section {
+  background: #FAF5E5;
+  padding: 80px 0;
+}
+.hp-brand-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.hp-brand-content h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 2.5vw, 34px);
+  color: #0F172A;
+  margin-bottom: 20px;
+}
+.hp-brand-content p {
+  color: #4a5568;
+  margin-bottom: 16px;
+  line-height: 1.85;
+}
+.hp-why-section {
+  background: #0F172A;
+  padding: 80px 0;
+  color: #fff;
+}
+.hp-why-section h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 2.5vw, 34px);
+  color: #fff;
+  margin-bottom: 28px;
+}
+.hp-why-section p {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 20px;
+  line-height: 1.85;
+}
+.hp-client-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hp-client-list li {
+  color: rgba(255,255,255,0.85);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.7;
+}
+.hp-client-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: #DCA54A;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.hp-gallery {
+  background: #fff;
+  padding: 80px 0;
+}
+.hp-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.hp-gallery-grid img {
+  border-radius: 10px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* ============================================================
+   LIQUID HONEY PAGE
+   ============================================================ */
+.lh-hero {
+  padding: 140px 0 80px;
+  background: #FAF5E5;
+  background-image: url('/images/day-care-hero-blobs-background-1.svg');
+  background-size: cover;
+  text-align: center;
+}
+.lh-hero h4 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 48px);
+  color: #0F172A;
+  margin-bottom: 8px;
+}
+.lh-hero h4.en {
+  color: #DCA54A;
+  font-size: clamp(18px, 2.5vw, 26px);
+  margin-bottom: 0;
+}
+.lh-section {
+  background: #fff;
+  padding: 80px 0;
+}
+.lh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.lh-content h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  color: #0F172A;
+  margin-bottom: 16px;
+  margin-top: 36px;
+}
+.lh-content h3:first-child { margin-top: 0; }
+.lh-content p {
+  color: #4a5568;
+  margin-bottom: 14px;
+  line-height: 1.85;
+}
+.lh-properties {
+  background: #FAF5E5;
+  padding: 80px 0;
+}
+.props-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.prop-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px;
+  border-left: 4px solid #DCA54A;
+}
+.prop-card h4 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #DCA54A;
+  margin-bottom: 10px;
+}
+.prop-card p {
+  font-size: 14px;
+  color: #4a5568;
+  line-height: 1.7;
+}
+.lh-packaging {
+  background: #fff;
+  padding: 80px 0;
+}
+.packaging-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+.packaging-group h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: #0F172A;
+  margin-bottom: 24px;
+}
+.packaging-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.packaging-imgs .pack-item {
+  text-align: center;
+}
+.packaging-imgs img {
+  border-radius: 10px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.packaging-imgs h4 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #0F172A;
+}
+
+/* ============================================================
+   APPLICATIONS PAGE
+   ============================================================ */
+.app-hero {
+  padding: 140px 0 80px;
+  background: #FAF5E5;
+  background-image: url('/images/day-care-page-header-blobs.svg');
+  background-size: cover;
+  text-align: center;
+}
+.app-hero h6 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #DCA54A;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.app-hero h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(28px, 4vw, 44px);
+  color: #0F172A;
+}
+.app-cards-section {
+  background: #fff;
+  padding: 80px 0;
+}
+.app-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.app-card {
+  background: #FAF5E5;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.app-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.app-card-body {
+  padding: 24px;
+}
+.app-card-body h5 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: #0F172A;
+  margin-bottom: 10px;
+}
+.app-card-body p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.7;
+}
+.app-detail-section {
+  background: #FAF5E5;
+  padding: 80px 0;
+}
+.app-detail-section h6 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #DCA54A;
+  margin-bottom: 12px;
+}
+.app-detail-section h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 36px);
+  color: #0F172A;
+  margin-bottom: 48px;
+}
+.app-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+.app-detail-item {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+.app-detail-item img {
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+}
+.app-detail-body {
+  padding: 28px;
+}
+.app-detail-body h4 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #0F172A;
+  margin-bottom: 12px;
+}
+.app-detail-body p {
+  font-size: 14px;
+  color: #4a5568;
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+.app-detail-body .dosage {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(220,165,74,0.1);
+  border-radius: 8px;
+  font-size: 13px;
+  color: #DCA54A;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+}
+.app-docs-section {
+  background: #fff;
+  padding: 80px 0;
+}
+.app-docs-section h6 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #DCA54A;
+  margin-bottom: 12px;
+}
+.app-docs-section h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(22px, 2.5vw, 32px);
+  color: #0F172A;
+  margin-bottom: 12px;
+}
+.app-docs-note {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 40px;
+}
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.doc-card {
+  background: #FAF5E5;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.doc-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.doc-card-body {
+  padding: 24px;
+}
+.doc-num {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: rgba(220,165,74,0.3);
+  margin-bottom: 6px;
+}
+.doc-card-body h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #DCA54A;
+  margin-bottom: 4px;
+}
+.doc-card-body h4 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #0F172A;
+  margin-bottom: 10px;
+}
+.doc-card-body p {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.doc-card-body a {
+  display: inline-block;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #DCA54A;
+  border: 1.5px solid #DCA54A;
+  border-radius: 20px;
+  padding: 6px 16px;
+  transition: all 0.2s;
+}
+.doc-card-body a:hover {
+  background: #DCA54A;
+  color: #fff;
+}
+.app-cta {
+  text-align: center;
+  margin-top: 48px;
+}
+.app-cta h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #0F172A;
+}
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-section {
+  background: #fff;
+  padding: 80px 0;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.contact-info h4 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 34px);
+  color: #0F172A;
+  margin-bottom: 4px;
+}
+.contact-info h5 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #DCA54A;
+  margin-bottom: 24px;
+}
+.contact-info .intro {
+  color: #4a5568;
+  margin-bottom: 12px;
+  line-height: 1.85;
+}
+.contact-types {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 32px 0;
+}
+.contact-type h6 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #0F172A;
+  margin-bottom: 6px;
+}
+.contact-type p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.7;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 32px;
+}
+.contact-detail-item h6 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #DCA54A;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.contact-detail-item p {
+  font-size: 15px;
+  color: #0F172A;
+  line-height: 1.7;
+}
+.contact-detail-item a {
+  color: #DCA54A;
+  text-decoration: underline;
+}
+.contact-image img {
+  border-radius: 16px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+#site-footer {
+  background: #0F172A;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 32px 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+#site-footer a { color: rgba(255,255,255,0.6); }
+#site-footer a:hover { color: #DCA54A; }
+
+/* ============================================================
+   BANNER IMAGE (full width)
+   ============================================================ */
+.banner-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .hp-app-grid { grid-template-columns: repeat(2, 1fr); }
+  .hp-gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  .docs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  body { font-size: 16px; }
+  section { padding: 60px 0; }
+  #site-header nav.main-nav { display: none; }
+  .hamburger { display: flex; }
+  .hero-section { padding: 100px 0 60px; }
+  .hero-image { display: none; }
+  .advantages-grid,
+  .honey-grid,
+  .about-home-grid,
+  .hp-intro-grid,
+  .hp-brand-grid,
+  .lh-grid,
+  .contact-grid,
+  .about-intro-grid { grid-template-columns: 1fr; gap: 36px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .hp-app-grid { grid-template-columns: repeat(2, 1fr); }
+  .hp-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .app-cards-grid { grid-template-columns: 1fr; }
+  .app-detail-grid { grid-template-columns: 1fr; }
+  .app-detail-item { grid-template-columns: 1fr; }
+  .app-detail-item img { width: 100%; height: 200px; }
+  .docs-grid { grid-template-columns: 1fr; }
+  .props-grid { grid-template-columns: 1fr; }
+  .packaging-grid { grid-template-columns: 1fr; }
+  .hp-badges { gap: 8px; }
+  .hp-badge { min-width: 140px; }
+}
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .hp-app-grid { grid-template-columns: 1fr; }
+  .hp-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .honey-images { grid-template-columns: 1fr; }
+  .packaging-imgs { grid-template-columns: 1fr; }
+}

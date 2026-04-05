@@ -1,0 +1,30 @@
+<header id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="{{ .langHomeURL }}" class="logo">
+        <img src="/images/honey_powder_logo-89x80.png"
+             srcset="/images/honey_powder_logo-89x80.png 89w, /images/honey_powder_logo.png 291w"
+             sizes="89px"
+             alt="{{ .siteName }}"
+             width="89" height="80">
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <ul>
+          {{ range .navItems }}
+          <li><a href="{{ .url }}"{{ if .isLang }} class="lang-switch"{{ end }}>{{ .label }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="打开菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-modal="true">
+  <button class="mobile-nav-close" aria-label="关闭菜单">×</button>
+  {{ range .navItems }}
+  <a href="{{ .url }}"{{ if .isLang }} class="lang-switch"{{ end }}>{{ .label }}</a>
+  {{ end }}
+</div>
