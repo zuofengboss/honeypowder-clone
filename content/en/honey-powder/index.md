@@ -1,4 +1,4 @@
 ---
-title: "Honey Powder – Yancheng Huamei Honey Products Co., Ltd."
-layout: "single"
+title: 
+url: "/en/honey-powder/"
 ---

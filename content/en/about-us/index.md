@@ -1,4 +1,4 @@
 ---
-title: "About us – Yancheng Huamei Honey Products Co., Ltd."
-layout: "single"
+title: 
+url: "/en/about-us/"
 ---

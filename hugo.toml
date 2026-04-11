@@ -3,3 +3,18 @@ languageCode = 'zh-CN'
 title = '盐城市花美蜂蜜制品有限公司 – Honey & Honey Powder'
 enableRobotsTXT = true
 
+defaultContentLanguage = 'zh'
+defaultContentLanguageInSubdir = false
+
+[languages.zh]
+languageName = '中文 (中国)'
+weight = 1
+
+[languages.en]
+languageName = 'English'
+languageCode = 'en'
+weight = 2
+
+[[module.mounts]]
+source = 'content'
+target = 'content'
