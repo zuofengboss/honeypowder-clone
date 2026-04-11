@@ -14,7 +14,3 @@ weight = 1
 languageName = 'English'
 languageCode = 'en'
 weight = 2
-
-[[module.mounts]]
-source = 'content'
-target = 'content'
